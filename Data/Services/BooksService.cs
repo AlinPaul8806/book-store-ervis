@@ -64,7 +64,6 @@ namespace BookStore.Data.Services
 
                 _context.SaveChanges();
             }
-
             return _book;
         }
 

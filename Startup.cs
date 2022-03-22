@@ -39,7 +39,8 @@ namespace BookStore
 
             //Configure the services:
             services.AddTransient<BooksService>();
-
+            services.AddTransient<AuthorsService>();
+            services.AddTransient<PublishersService>();
 
 
             services.AddSwaggerGen(c =>
@@ -70,7 +71,7 @@ namespace BookStore
             });
 
             // seed the db(without making a new migration):
-            AppDbInitializer.Seed(app);
+            //AppDbInitializer.Seed(app);  ////the seed method will not be called
         }
     }
 }
