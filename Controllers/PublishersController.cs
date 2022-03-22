@@ -10,10 +10,10 @@ namespace BookStore.Controllers
     [ApiController]
     public class PublishersController : ControllerBase
     {
-        private readonly PublishersService _publishersService;
+        public PublishersService _publishersService;
         public PublishersController(PublishersService publishersService)
         {
-            publishersService = _publishersService;
+            _publishersService = publishersService;
         }
 
         [HttpGet("get-all-publishers")] // --> ("get-all-publishers") = custom url
