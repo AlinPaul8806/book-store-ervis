@@ -3,6 +3,7 @@ using BookStore.Data.Models.ViewModels;
 using BookStore.Data.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace BookStore.Controllers
 {
@@ -17,10 +18,17 @@ namespace BookStore.Controllers
         }
 
         [HttpGet("get-all-publishers")] // --> ("get-all-publishers") = custom url
-        public IActionResult GetAllPublishers()
+        public IActionResult GetAllPublishers(string sortBy, string searchString, int pageNumber)
         {
-            var publishers = _publishersService.GetAllPublishers();
-            return Ok(publishers);
+            try
+            {
+                var publishers = _publishersService.GetAllPublishers(sortBy, searchString, pageNumber);
+                return Ok(publishers);
+            }
+            catch (Exception)
+            {
+                return BadRequest("Sorry, we could not load the publishers.");
+            }
         }
 
 
@@ -28,15 +36,29 @@ namespace BookStore.Controllers
         public IActionResult GetPublisher(int id)
         {
             var publisher = _publishersService.GetPublisher(id);
-            return Ok(publisher);
+            if (publisher != null)
+            {
+                return Ok(publisher);
+            }
+            else
+            {
+                return NotFound();
+            }
         }
 
 
         [HttpPost("add-publisher")] // --> ("add-publisher") = custom url
         public IActionResult AddPublisher([FromBody] PublisherVM publisherVM)
         {
-            _publishersService.AddPublisher(publisherVM);
-            return Ok();
+            var publisher = _publishersService.AddPublisher(publisherVM);
+            if (publisher != null)
+            {
+                return Created(nameof(AddPublisher), publisher);
+            }
+            else 
+            {
+                return StatusCode(StatusCodes.Status409Conflict); //Conflict, for updates that fail due to conflicts such as already exists etc..
+            }
         }
 
 
@@ -44,15 +66,29 @@ namespace BookStore.Controllers
         public IActionResult UpdatePublisher(int id, [FromBody] PublisherVM publisherVM)
         {
             var updatedPublisher = _publishersService.UpdatePublisher(id, publisherVM);
-            return Ok(updatedPublisher);
+            if (updatedPublisher != null)
+            {
+                return Ok(updatedPublisher);
+            }
+            else
+            {
+                return StatusCode(StatusCodes.Status409Conflict); //Conflict, for updates that fail due to conflicts such as already exists etc..
+            }
         }
+
 
         [HttpDelete("delete-publisher-by-id/{id}")]
         public IActionResult DeletePublisher(int id)
         {
-            _publishersService.DeletePublisher(id);
-            return Ok();
+            try
+            {
+                _publishersService.DeletePublisher(id);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
-
     }
 }

@@ -37,7 +37,7 @@ namespace BookStore.Controllers
         [HttpPost("add-book")] // --> ("add-book") = custom url
         public IActionResult AddBook([FromBody] BookVM book)
         {
-            _booksService.AddBook(book);
+            _booksService.AddBookWithAuthors(book);
             return Ok();
         }
 

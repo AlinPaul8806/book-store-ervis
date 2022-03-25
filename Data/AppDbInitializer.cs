@@ -23,7 +23,6 @@ namespace BookStore.Data
                         DateRead = System.DateTime.Now.AddDays(-10),
                         Rate = 5,
                         Genre = "Fantasy",
-                        Author = "JRR Tolkien",
                         CoverUrl = "https://mir-s3-cdn-cf.behance.net/project_modules/1400/56d96263885635.5acd0047cf3e6.jpg",
                         DateAdded = System.DateTime.Now
                     },
@@ -33,7 +32,6 @@ namespace BookStore.Data
                         Description = "Gripping novel debut by Andrew Seaward.",
                         IsRead = false,
                         Genre = "Crime",
-                        Author = "Andrew Seaward",
                         CoverUrl = "https://s3.amazonaws.com/htw/dt-contest-entries/78059/united-states-contemporary-fiction-thriller-transgressive-fiction-urban-fiction-addiction-fiction-book-cover-design.png",
                         DateAdded = System.DateTime.Now
                     },
@@ -45,7 +43,6 @@ namespace BookStore.Data
                         DateRead = System.DateTime.Now.AddDays(-28),
                         Rate = 3,
                         Genre = "Fantasy",
-                        Author = "Shirl Anders",
                         CoverUrl = "http://www.indiedesignz.com/blog/wp-content/uploads/2011/12/vampire_print.jpg",
                         DateAdded = System.DateTime.Now
                     },
@@ -57,7 +54,6 @@ namespace BookStore.Data
                         DateRead = System.DateTime.Now.AddDays(-20),
                         Rate = 5,
                         Genre = "Romance",
-                        Author = "Ruth Nestvold",
                         CoverUrl = "https://www.creativindiecovers.com/wp-content/uploads/2012/01/Yseultframe1.jpg",
                         DateAdded = System.DateTime.Now
                     });

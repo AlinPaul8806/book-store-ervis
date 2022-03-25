@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "f/PmZfn6HYa7AFVl32kvaX6bVFVvUPi7PD6XwjD7MQUarAI1gBRUL5ftfOCm20/QqrXTwKK572DiCZnX7wzX+Q==",
+  "dgSpecHash": "jMNEZ0z+fYe5+8w38dz/rajcjwk+/cSo6Ui+SrUKKnEV2iUL6qXAZ+48hwEnLMTqqRcLbMe+KHr+f5Q3lRAAVA==",
   "success": true,
   "projectFilePath": "C:\\Personal projects\\BookStore-Udemy\\BookStore\\BookStore.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\paul.popa\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\paul.popa\\.nuget\\packages\\microsoft.aspnetcore.mvc.versioning\\5.0.0\\microsoft.aspnetcore.mvc.versioning.5.0.0.nupkg.sha512",
     "C:\\Users\\paul.popa\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\paul.popa\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
     "C:\\Users\\paul.popa\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.0.1\\microsoft.data.sqlclient.sni.runtime.2.0.1.nupkg.sha512",
