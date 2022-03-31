@@ -1,0 +1,24 @@
+03/28/2022 08:18:19 +03:00 [] - Message: Application started. Press Ctrl+C to shut down.
+03/28/2022 08:18:19 +03:00 [] - Message: Request starting HTTP/2 GET https://localhost:44355/swagger/index.html - -
+03/28/2022 08:18:19 +03:00 [] - Message: Hosting environment: "Development"
+03/28/2022 08:18:19 +03:00 [] - Message: Content root path: "C:\Personal projects\BookStore-Udemy\BookStore"
+03/28/2022 08:18:19 +03:00 [] - Message: Request finished HTTP/2 GET https://localhost:44355/swagger/index.html - - - 200 - text/html;charset=utf-8 176.7741ms
+03/28/2022 08:18:19 +03:00 [] - Message: Request starting HTTP/2 GET https://localhost:44355/_framework/aspnetcore-browser-refresh.js - -
+03/28/2022 08:18:19 +03:00 [] - Message: Request finished HTTP/2 GET https://localhost:44355/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 8.9173ms
+03/28/2022 08:18:19 +03:00 [] - Message: Request starting HTTP/2 GET https://localhost:44355/swagger/v1/swagger.json - -
+03/28/2022 08:18:19 +03:00 [] - Message: Request finished HTTP/2 GET https://localhost:44355/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 65.3943ms
+03/28/2022 08:18:26 +03:00 [] - Message: Request starting HTTP/2 GET https://localhost:44355/api/Publishers/get-all-publishers - -
+03/28/2022 08:18:26 +03:00 [] - Message: Executing endpoint '"BookStore.Controllers.PublishersController.GetAllPublishers (BookStore)"'
+03/28/2022 08:18:26 +03:00 [] - Message: Route matched with "{action = \"GetAllPublishers\", controller = \"Publishers\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult GetAllPublishers(System.String, System.String, Int32)" on controller "BookStore.Controllers.PublishersController" ("BookStore").
+03/28/2022 08:18:26 +03:00 [] - Message: this is a test log in GetAllPublishers() --> Publishers controller.
+03/28/2022 08:18:26 +03:00 [] - Message: Entity Framework Core "5.0.2" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+03/28/2022 08:18:26 +03:00 [] - Message: Executed DbCommand ("12"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[Name]
+FROM [Publishers] AS [p]
+ORDER BY [p].[Name]"
+03/28/2022 08:18:26 +03:00 [] - Message: Executing "OkObjectResult", writing value of type '"BookStore.Data.PaginatedList`1[[BookStore.Data.Models.Publisher, BookStore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+03/28/2022 08:18:26 +03:00 [] - Message: Executed action "BookStore.Controllers.PublishersController.GetAllPublishers (BookStore)" in 879.0043ms
+03/28/2022 08:18:26 +03:00 [] - Message: Executed endpoint '"BookStore.Controllers.PublishersController.GetAllPublishers (BookStore)"'
+03/28/2022 08:18:26 +03:00 [] - Message: Request finished HTTP/2 GET https://localhost:44355/api/Publishers/get-all-publishers - - - 200 - application/json;+charset=utf-8 922.5139ms
+03/28/2022 08:22:04 +03:00 [] - Message: this is a test log in GetAllPublishers() --> Publishers controller.
+03/28/2022 10:51:16 +03:00 [] - Message: this is a test log in GetAllLogs() --> Logs controller.

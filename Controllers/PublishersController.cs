@@ -3,6 +3,7 @@ using BookStore.Data.Models.ViewModels;
 using BookStore.Data.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using System;
 
 namespace BookStore.Controllers
@@ -11,10 +12,13 @@ namespace BookStore.Controllers
     [ApiController]
     public class PublishersController : ControllerBase
     {
-        public PublishersService _publishersService;
-        public PublishersController(PublishersService publishersService)
+        private PublishersService _publishersService;
+        private readonly ILogger<PublishersController> _logger;
+
+        public PublishersController(PublishersService publishersService, ILogger<PublishersController> logger)
         {
             _publishersService = publishersService;
+            _logger = logger;
         }
 
         [HttpGet("get-all-publishers")] // --> ("get-all-publishers") = custom url
@@ -22,6 +26,7 @@ namespace BookStore.Controllers
         {
             try
             {
+                _logger.LogInformation("this is a test log in GetAllPublishers() --> Publishers controller.");
                 var publishers = _publishersService.GetAllPublishers(sortBy, searchString, pageNumber);
                 return Ok(publishers);
             }

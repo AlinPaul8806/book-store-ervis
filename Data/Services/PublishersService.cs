@@ -34,7 +34,7 @@ namespace BookStore.Data.Services
         { 
             //searching:
             var publishers = _context.Publishers.OrderBy(n => n.Name).ToList();
-            if (string.IsNullOrEmpty(sortBy))
+            if (!string.IsNullOrEmpty(sortBy))
             {
                 switch (sortBy)
                 {

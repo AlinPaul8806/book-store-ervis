@@ -23,14 +23,15 @@ namespace BookStore.Data
                 .HasOne(b => b.Author)
                 .WithMany(ba => ba.BookAuthors)
                 .HasForeignKey(bi => bi.AuthorId);
+
+            modelBuilder.Entity<Log>().HasKey(l => l.Id);
         }
 
         // define table names for your c# models
         public DbSet<Book> Books { get; set; }
-
         public DbSet<Author> Authors { get; set; }
         public DbSet<Book_Author> Books_Authors { get; set; }
         public DbSet<Publisher> Publishers { get; set; }
-
+        public DbSet<Log> Logs { get; set; }
     }
 }

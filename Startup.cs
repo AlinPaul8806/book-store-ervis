@@ -42,18 +42,21 @@ namespace BookStore
             services.AddTransient<BooksService>();
             services.AddTransient<AuthorsService>();
             services.AddTransient<PublishersService>();
+            services.AddTransient<LogsService>();
 
-            services.AddApiVersioning( config =>
-            {
-                config.DefaultApiVersion = new ApiVersion(1, 0);
-                config.AssumeDefaultVersionWhenUnspecified = true;
+            //services.AddApiVersioning( config =>
+            //{
+            //    config.DefaultApiVersion = new ApiVersion(1, 0);
+            //    config.AssumeDefaultVersionWhenUnspecified = true;
 
-                config.ApiVersionReader = new HeaderApiVersionReader("custom-version-header");
-            });
+            //    config.ApiVersionReader = new HeaderApiVersionReader("custom-version-header");
+            //});
+
+            //services.AddApiVersioning();
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v2", new OpenApiInfo { Title = "BookStore", Version = "v2" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "BookStore", Version = "v1" });
             });
         }
 
@@ -64,7 +67,7 @@ namespace BookStore
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v2/swagger.json", "BookStore v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "BookStore v1"));
             }
 
             app.UseHttpsRedirection();
